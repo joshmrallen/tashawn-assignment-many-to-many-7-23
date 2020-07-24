@@ -10,4 +10,15 @@ class Student < ActiveRecord::Base
         self.where(grade_level: grade)
     end
 
+    def all_club_names
+    #return all the clubs' name in an array which the student belongs to
+    end
+
+    def all_locations
+    #return all the locations in an array where the student go to join the clubs
+    end
+
+    def club_friends
+    #return all the friends the student have through the clubs. Remove duplication.
+    end
 end
