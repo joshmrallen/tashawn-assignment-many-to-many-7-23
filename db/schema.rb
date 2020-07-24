@@ -10,10 +10,24 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_07_23_220824) do
+ActiveRecord::Schema.define(version: 2020_07_24_153911) do
 
-# Could not dump table "grade_levels" because of following StandardError
-#   Unknown type 'belongs_to' for column 'student_id'
+  create_table "clubs", force: :cascade do |t|
+    t.string "name"
+    t.string "activity"
+    t.string "location"
+  end
+
+  create_table "grade_levels", force: :cascade do |t|
+    t.string "grade"
+    t.integer "teacher_id"
+    t.integer "student_id"
+  end
+
+  create_table "student_clubs", force: :cascade do |t|
+    t.integer "student_id"
+    t.integer "club_id"
+  end
 
   create_table "students", force: :cascade do |t|
     t.string "first_name"
