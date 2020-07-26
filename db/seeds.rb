@@ -5,6 +5,8 @@ Student.delete_all
 Teacher.delete_all
 GradeLevel.delete_all
 StudentClub.delete_all
+Ball.delete_all
+BallStudent.delete_all
 
 Student.create(first_name: "first1", last_name: "last1")
 Student.create(first_name: "first2", last_name: "last2")
@@ -16,10 +18,10 @@ Teacher.create(last_name: "last6", years_of_experience: 5)
 Teacher.create(last_name: "last7", years_of_experience: 7)
 Teacher.create(last_name: "last8", years_of_experience: 9)
 
-GradeLevel.create(grade: "first", student_id: 1, teacher_id: 1)
-GradeLevel.create(grade: "second", student_id: 2, teacher_id: 2)
-GradeLevel.create(grade: "third", student_id: 3, teacher_id: 3)
-GradeLevel.create(grade: "fourth", student_id: 4, teacher_id: 4)
+# GradeLevel.create(grade: 1, student_id: 1, teacher_id: 1)
+# GradeLevel.create(grade: 2, student_id: 2, teacher_id: 2)
+# GradeLevel.create(grade: 3, student_id: 3, teacher_id: 3)
+# GradeLevel.create(grade: 4, student_id: 4, teacher_id: 4)
 
 Club.create(name: "clubname1", activity: "activity1", location: "location1")
 Club.create(name: "clubname2", activity: "activity2", location: "location2")

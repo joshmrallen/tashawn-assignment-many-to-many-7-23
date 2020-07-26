@@ -4,15 +4,30 @@ class Ball < ActiveRecord::Base
     after_initialize :init
 
     def init
-        self.random_ball_assignment
         self.inflated ||= true
     end
 
-    def random_ball_assignment
+    def self.random_ball_type
         r = Random.new
         index = r.rand(0...5)
         types = ["golf ball", "basketball", "ping-pong", "football", "tennis ball"]
-        self.ball_type = types[index]
+        types[index]
+    end
+
+    def deflate
+        self.inflated = false
+    end
+
+    def self.inflate_all
+        self.all.each do |ball|
+            ball.inflated = true
+        end
+    end
+
+    def self.create_10_balls
+        10.times {
+            self.create(ball_type: self.random_ball_type)
+        }
     end
 
 end
